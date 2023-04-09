@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <button id="add-contact">Add a Contact</button>
+<div id="contact-list"></div>
+
+    
+</body>
+<script>
+    // Define a counter to keep track of number of contacts added
+let contactCounter = 0;
+
+// Function to generate the HTML for a new contact input field
+function generateContactInput() {
+  // Create a new div element for the contact input
+  const contactDiv = $('<div>').addClass('contact-input');
+
+  // Create a new input element for the contact name
+  const nameInput = $('<input>').attr({
+    type: 'text',
+    name: 'contact-name-' + contactCounter
+  });
+
+  // Create a new 'x' button to remove the contact input
+  const removeButton = $('<button>').addclass('remove-contact').text('x');
+
+  // Add a click event listener to the remove button
+  removeButton.click(function() {
+    // Remove the parent div (i.e., the contact input div) from the DOM
+    $(this).parent().remove();
+  });
+
+  // Add the name input and remove button to the contact input div
+  contactDiv.append(nameInput, removeButton);
+
+  // Increment the contact counter
+  contactCounter++;
+
+  // Return the contact input div
+  return contactDiv;
+}
+
+// Add a click event listener to the "Add a Contact" button
+$('#add-contact').click(function() {
+  // Generate a new contact input and append it to the contact list
+  $('#contact-list').append(generateContactInput());
+});
+
+</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <input type="button" value="Submit1" id="Submit12">
+    <input type="button" value="Submit2" id="Submit21">
+
+    <div id="numeric1">
+        <input type="text" name="fnum" id="fnum1"> 
+        <input type="button" id="submit1" value="submit">
+    </div>
+    <div id="numeric2">
+        <input type="text" name="fnum" id="fnum2"> 
+        <input type="button" id="submit2" value="submit">
+    </div>
+</body>
+<script>
+    $(document).ready(()=>{
+        $('#numeric1').hide()
+        $('#numeric2').hide()
+        $('#submit1').click(()=>{
+            var a = $('#fnum1').val()
+            if(isNaN(a) || a.length == ''){
+                alert("It is not a number")
+            }
+            else{
+                alert("It is a number")
+            }
+        })
+        $('#submit2').click(()=>{
+            var b = $('#fnum2').val()
+            if(parseInt(b)){
+                alert("It is a number")
+            }
+            else{
+                alert("It is not a number")
+            }
+        })
+        $('#Submit12').click(()=>{
+            $('#numeric1').show()
+        })
+        $('#Submit21').click(()=>{
+            $('#numeric2').show()
+        })
+    })
+
+</script>
+</html>

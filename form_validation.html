@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <input type="text" name="" id="fname">
+    <input type="text" name="" id="sname">
+    <input type="number" name="" id="mno">
+    <button id="sub">SUbmit</button>
+    <select name="" id="" class="country">
+        <option value="one">one</option>
+        <option value="two">two</option>
+        <option value="three">three</option>
+    </select>
+    <input type="radio" name="gen" value="male" id=""> Male
+    <input type="radio" name="gen" value="female" id=""> Female
+    <table>
+        <thead>
+            <tr>
+                <th>fname</th>
+                <th>sname</th>
+                <th>phone nu</th>
+                <th>random</th>
+                <th>gender</th>
+            </tr>
+        </thead>
+        <tbody id="result">
+
+        </tbody>
+    </table>
+    <script>
+        $(document).ready(()=>{
+          $('#sub').click(()=>{
+            var fname = $('#fname').val()
+            var sname = $('#sname').val()
+            var number = $('#mno').val()
+            var sc = $('.country').val()
+            var dsd = $("input[name='gen']:checked").val()
+            var row;
+            
+            row += `<tr><td>${fname}</td><td>${sname}</td><td>${number}</td><td>${sc}</td><td>${dsd}</td></tr>`
+            $('#result').append(row)
+          })
+        })
+    </script>
+</body>
+</html>

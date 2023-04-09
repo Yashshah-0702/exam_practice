@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <p>Select Your technology :</p>
+    <input type="radio" name="technology" value="PHP" id=""> PHP
+    <input type="radio" name="technology" value="ASP.NET" id=""> ASP.NET
+    <input type="radio" name="technology" value="ASP" id=""> ASP
+    <input type="radio" name="technology" value="JSP" id=""> JSP
+    <input type="radio" name="technology" value="PERL" id=""> PERL
+    <input type="radio" name="technology" value="Cold Fusion" id=""> Cold Fusion
+    <input type="radio" name="technology" value="Other" id=""> Other
+    <p>You Have Selected:- <span id="show"></span></p>
+</body>
+
+<script>
+$(document).ready(function(){
+    $("input[name='technology']").change(function(){
+        var a = $("input[name='technology']:checked").val()
+        // console.log(a)
+        $('#show').html('')
+        $('#show').append(a)
+    })
+})
+</script>
+</html>

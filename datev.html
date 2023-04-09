@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <input type="text" name="" id="dt">
+    <button id="check">Check</button>
+</body>
+<script>
+    $(document).ready(()=>{
+        $('#check').click(()=>{
+            var dt = $('#dt').val() 
+            var b = dt.split('-')
+            var day = b[0]
+            var month = b[1]
+            var year = b[2]
+
+            if(day>31 || day<1){
+                alert("Day is incorrect")
+            }
+            else if(month > 12 || month < 1){
+                alert("month is incorrect")
+            }
+            else if((month == 4 || month == 6 || month == 9 || month == 11) && day>30){
+                alert("Day is incorrect")
+            }
+            else if (month == 2 && day>28){
+                alert("Incorrect day")
+            }
+            else{
+                alert("Valid date")
+            }
+        })
+    })
+</script>
+</html>

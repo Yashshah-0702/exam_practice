@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Popup 1</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#read-btn").click(function(){
+				window.open("pop2.html", "Terms and Conditions", "height=200,width=400,top=100,left=100,resizable=no,toolbar=no,location=no");
+			});
+		});
+	</script>
+</head>
+<body>
+	<p>Please click here in order to read our Terms and Conditions</p>
+	<button id="read-btn">Read</button>
+</body>
+</html>

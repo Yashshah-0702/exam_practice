@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Button Value to Input Field</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+	<button id="button1" value="Click Me">Click Me</button>
+    <button id="button1" value="1 Me">1 Me</button>
+    <button id="button1" value="2 Me">2 Me</button>
+	<input type="text" id="input1">
+</body>
+<script>
+    $(document).ready(function() {
+	$('button').click(function() {
+		var buttonValue = $('#button1').val();
+        var btn = $(this).val()
+		$('#input1').val(buttonValue + btn);
+	});
+});
+
+</script>
+</html>

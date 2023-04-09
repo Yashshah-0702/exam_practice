@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <select name="" id="" class="country">
+     <option value="India ,America ,UK">select all country</option>
+     <option value="India">India</option>
+     <option value="America">America</option>
+     <option value="UK">UK</option>
+    </select>
+
+    <p>You have selected  <span id="show"></span></p>
+</body>
+<script>
+    $(document).ready(()=>{
+        $('.country').change(()=>{
+            let sc = $('.country').val()
+            $('#show').html('')
+            $('#show').append(sc)
+        })
+    })
+</script>
+</html>
